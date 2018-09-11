@@ -167,136 +167,8 @@ sys.argv is ['argv_list.py', 'first', 'second', 'third']
 
 then Python adds each of those arguments to that magic list.
 
-With this in hand, let's build a version of `readings.py` that always prints
-the per-patient mean of a single data file.
-The first step is to write a function that outlines our implementation,
-and a placeholder for the function that does the actual work.
-By convention this function is usually called `main`,
-though we can call it whatever we want:
-
-~~~
-$ cat ../code/readings_01.py
-~~~
-{: .language-bash}
-
-~~~
-import sys
-import numpy
-
-def main():
-    script = sys.argv[0]
-    filename = sys.argv[1]
-    data = numpy.loadtxt(filename, delimiter=',')
-    for m in numpy.mean(data, axis=1):
-        print(m)
-~~~
-{: .language-python}
-
-This function gets the name of the script from `sys.argv[0]`,
-because that's where it's always put,
-and the name of the file to process from `sys.argv[1]`.
-Here's a simple test:
-
-~~~
-$ python ../code/readings_01.py inflammation-01.csv
-~~~
-{: .language-bash}
-
-There is no output because we have defined a function,
-but haven't actually called it.
-Let's add a call to `main`:
-
-~~~
-$ cat ../code/readings_02.py
-~~~
-{: .language-bash}
-
-~~~
-import sys
-import numpy
-
-def main():
-    script = sys.argv[0]
-    filename = sys.argv[1]
-    data = numpy.loadtxt(filename, delimiter=',')
-    for m in numpy.mean(data, axis=1):
-        print(m)
-
-if __name__ == '__main__':
-   main()
-~~~
-{: .language-python}
-
-and run that:
-
-~~~
-$ python ../code/readings_02.py inflammation-01.csv
-~~~
-{: .language-bash}
-
-~~~
-5.45
-5.425
-6.1
-5.9
-5.55
-6.225
-5.975
-6.65
-6.625
-6.525
-6.775
-5.8
-6.225
-5.75
-5.225
-6.3
-6.55
-5.7
-5.85
-6.55
-5.775
-5.825
-6.175
-6.1
-5.8
-6.425
-6.05
-6.025
-6.175
-6.55
-6.175
-6.35
-6.725
-6.125
-7.075
-5.725
-5.925
-6.15
-6.075
-5.75
-5.975
-5.725
-6.3
-5.9
-6.75
-5.925
-7.225
-6.15
-5.95
-6.275
-5.7
-6.1
-6.825
-5.975
-6.725
-5.7
-6.25
-6.4
-7.05
-5.9
-~~~
-{: .output}
+#FIXME - have already developed functions in module 1 to process files in Jupyter. (number of reads? Averages?)
+#FIXME - need to cover classes to understand __name__
 
 > ## Running Versus Importing
 >
@@ -305,27 +177,65 @@ $ python ../code/readings_02.py inflammation-01.csv
 > The biggest difference is that we don't expect anything
 > to happen when we import a file,
 > whereas when running a script, we expect to see some
-> output printed to the console.
+> output printed to the console. 
+> 
+> In fact, you can use the same file for importing or for running as a script.
 >
 > In order for a Python script to work as expected
 > when imported or when run as a script,
 > we typically put the part of the script
-> that produces output in the following if statement:
+> that produces output (i.e., calls the functions in the right order), inside a 'main' function:
 >
-> ~~~
-> if __name__ == '__main__':
->     main()  # Or whatever function produces output
-> ~~~
-> {: .language-python}
 >
-> When you import a Python file, `__name__` is the name
-> of that file (e.g., when importing `readings.py`,
-> `__name__` is `'readings'`). However, when running a
-> script in bash, `__name__` is always set to `'__main__'`
-> in that script so that you can determine if the file
-> is being imported or run as a script.
+> FIXME: example of main function
+>
+> ## Main functions
+> Try running your script now:
+> ~~~
+> myscript file.py
+> ~~~
+> {: .language-bash}
+> Did anything happen? Why?
+{: .challenge}
+
+To actually make the logic 'run', we need to call our main function (just like every other function).
+We could add a function call to main at the bottom of our script:
+
+~~~
+FIXME
+main()
+~~~
+{: .language-python}
+
+This should work. Great! However, calling the main function inside the script like this will cause the 
+logic to execute when we import the file as a module, too. 
+
+> ## Try it out
+> In your python notebook, in a new cell type:
+> ~~~
+> import myscript
+> ~~~
+> {: .lanugage-python}
+{: .challenge}
+
+We can get around this problem by placing the call to `main()` inside the following `if` statement:
+
+~~~
+if __name__ == '__main__':
+    main()  
+~~~
+{: .language-python}
+
+When you import a Python file, `__name__` is the name
+of that file (e.g., when importing `readings.py`,
+`__name__` is `'readings'`). However, when running a
+script in bash, `__name__` is always set to `'__main__'`
+in that script so that you can determine if the file
+is being imported or run as a script.
 {: .callout}
 
+> ## The value of `__name__`
+>
 > ## The Right Way to Do It
 >
 > If our programs can take complex parameters or multiple filenames,
