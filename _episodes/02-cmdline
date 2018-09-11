@@ -1,7 +1,7 @@
 ---
 title: Command-Line Programs
-teaching: 30
-exercises: 0
+teaching: 60
+exercises: 120
 questions:
 - "How can I write Python programs that will work like Unix command-line tools?"
 objectives:
@@ -19,6 +19,61 @@ keypoints:
 The Jupyter Notebook and other interactive tools are great for prototyping code and exploring data,
 but sooner or later we will want to use our program in a pipeline
 or run it in a shell script to process thousands of data files.
+
+> ## FastQC analogy
+>
+> Everyone now has experience running the command-line program FastQC. You can ask for help:
+> 
+>
+> ~~~
+> fastqc -h
+> ~~~
+> {: .source}
+>
+> ~~~
+> 
+>            FastQC - A high throughput sequence QC analysis tool
+>
+>SYNOPSIS
+>
+>	fastqc seqfile1 seqfile2 .. seqfileN
+>
+>    fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam] 
+>           [-c contaminant file] seqfile1 .. seqfileN
+> ~~~
+> {: .output}
+> 
+> You can run it with default values on a single input file:
+> 
+> ~~~
+> fastqc my_input_file.fastq.gz
+> ~~~
+> {: .source}
+>
+> You can use optional arguments and flags:
+>
+> ~~~
+> fastqc -o my_project/analysis/ --kmers 10 my_input_file.fastq.gz
+> ~~~
+> {: .source}
+> 
+> And you can wrap it all up inside a bash or batch script:
+>
+> ~~~
+> #SBATCH --job-name=fastqc
+> #SBATCH --time=00:10:00
+> #SBATCH --ntasks=1
+> #SBATCH --mem=1GB
+> 
+> module add fastqc
+>
+> fastqc my_input_file.fastq.gz
+> ~~~
+> {: .source}
+> 
+> We can write python programs that work just like fastqc!
+{: .callout}
+
 In order to do that,
 we need to make our programs work like other Unix command-line tools.
 For example,
