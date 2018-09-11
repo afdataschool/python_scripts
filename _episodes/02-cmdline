@@ -87,51 +87,7 @@ and prints the average inflammation per patient.
 > command that tells you to run that command in the shell rather than the Python interpreter.
 {: .callout}
 
-This program does exactly what we want - it prints the average inflammation per patient
-for a given file.
-
-~~~
-$ python ../code/readings_04.py --mean inflammation-01.csv
-~~~
-{: .language-bash}
-
-~~~
-5.45
-5.425
-6.1
-...
-6.4
-7.05
-5.9
-~~~
-{: .output}
-
-We might also want to look at the minimum of the first four lines
-
-~~~
-$ head -4 inflammation-01.csv | python ../code/readings_06.py --min
-~~~
-{: .language-bash}
-
-or the maximum inflammations in several files one after another:
-
-~~~
-$ python ../code/readings_04.py --max inflammation-*.csv
-~~~
-{: .language-bash}
-
-Our scripts should do the following:
-
-1. If no filename is given on the command line, read data from
-[standard input]({{ page.root }}/reference/#standard-input).
-2. If one or more filenames are given, read data from them and report statistics for each file
-separately.
-3. Use the `--min`, `--mean`, or `--max` flag to determine what statistic to print.
-
-To make this work,
-we need to know how to handle command-line arguments in a program,
-and how to get at standard input.
-We'll tackle these questions in turn below.
+#FIX ME - example script that calculates averages.
 
 ## Command-Line Arguments
 
@@ -161,6 +117,8 @@ version is 3.4.3+ (default, Jul 28 2015, 13:17:50)
 ~~~
 {: .output}
 
+Congratulations! You have written and called your first command line program.
+
 Create another file called `argv_list.py` and save the following text to it.
 
 ~~~
@@ -168,6 +126,13 @@ import sys
 print('sys.argv is', sys.argv)
 ~~~
 {: .language-python}
+
+> ## sys.argv type
+> What is the type of `sys.argv`? Take a guess.
+> Now, modify your `argv_list.py` script to print out the type of `sys.argv`
+> Re-run your script.
+> Does the result make sense?
+{: .challenge}
 
 The strange name `argv` stands for "argument values".
 Whenever Python runs a program,
