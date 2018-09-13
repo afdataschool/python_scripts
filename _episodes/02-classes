@@ -1,1 +1,43 @@
 
+
+~~~
+class Empty(object):
+    pass
+~~~
+{: .language-python}
+
+We use the keyword 'class', followed by the new class's name, just as we would use the keyword 'def' and a 
+name to create a function. We'll come back later and explain why we have put the word 'object' in parentheses 
+after the class's name—for now, you'll just have to trust us. The body of this class is just the keyword 
+'pass', meaning "do nothing", because we're not actually defining any behavior for things of this type.
+
+~~~
+first = Empty()
+second = Empty()
+~~~
+{: .language-python}
+
+We do this by "calling" the class's name as if it was a function. Each time we do this, Python goes and creates 
+a new object of that class. We can assign those objects to variables to keep track of them, just as we've been 
+assigning things to variables all along.
+
+~~~
+print('first is', id(first))
+print('second id', id(second))
+~~~
+{: .language-python}
+
+~~~
+#to do - ID of other objects
+
+#to do - class memory schematic
+
+First, though, let's see how we teach classes to do things. To do this, we define one or more methods inside the class.
+We define the class's behaviour with methods. 'Methods' are essentially functions defined within the class.
+
+~~~
+class Greeter(object):
+    def greet(self, name):
+        print('hello', name)
+        
+https://v4.software-carpentry.org/oop/basics.html
