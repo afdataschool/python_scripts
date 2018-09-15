@@ -1,14 +1,19 @@
 
 ---
-title: Analyzing Data from Multiple Files
+title: Analyzing Data from Files
 teaching: 20
 exercises: 0
 questions:
+- "How can I read data from, and write data to, a file?"
 - "How can I do the same operations on many different files?"
 objectives:
+- "Use a `for` loop to read a file line-by-line"
+- "Write functions to process file lines"
 - "Use a library function to get a list of filenames that match a wildcard pattern."
 - "Write a `for` loop to process multiple files."
 keypoints:
+- "Use `with open('my_file.txt') as f:` to open files"
+- "Break lines into fields using `f.readline().split()`"
 - "Use `glob.glob(pattern)` to create a list of files whose names match a pattern."
 - "Use `*` in a pattern to match zero or more characters, and `?` to match any single character."
 ---
