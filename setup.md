@@ -6,7 +6,7 @@ This lesson uses an example fastq file. Inside your dataschool folder, please ma
 ~~~
 `py_scripts/data`
 ~~~
-{: .language-python}
+{: .language-bash}
 
 Download [sample.fastq]({{ page.root }}/data/sample.fastq) to this directory.
 
