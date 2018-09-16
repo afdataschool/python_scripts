@@ -78,8 +78,20 @@ with open('afds/py_scripts/data/sample.fastq') as f:
 
 So, lines are read in as strings, which means we can perform any string operations on them.
 
+What does this program do?
+~~~
+with open('afds/py_scripts/data/sample.fastq') as f:
+    for line in f:
+        if line[0] == '@'
+            line.split(' ')
+~~~
+{: .language-python}
 
-
+> ## Parsing data
+> Modify the program above to just print a list of the machine/lane/flowcell coordinate data.
+>
+> Challenge: further modify the program to print out *only* the coordinates
+{: .challenge}
 We now have almost everything we need to process all our data files.
 The only thing that's missing is a library with a rather unpleasant name:
 
