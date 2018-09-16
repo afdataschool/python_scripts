@@ -4,7 +4,7 @@ title: Setup
 This lesson uses an example fastq file. Inside your dataschool folder, please make yourself the following directory structure:
 
 ~~~
-`py_scripts/data`
+py_scripts/data
 ~~~
 {: .language-bash}
 
