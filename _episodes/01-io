@@ -18,6 +18,56 @@ keypoints:
 - "Use `*` in a pattern to match zero or more characters, and `?` to match any single character."
 ---
 
+Reading files in python uses `for` loops. As a refresher, here is a simple `for` loop in Python:
+
+~~~
+for letter in 'ABCDEFGHIJ':
+    print(letter)
+~~~
+{: .language-python}
+
+> ## For loop practice
+> Write a for loop that generates this image:
+> *
+> **
+> ***
+> ****
+> *****
+{: .challenge}
+
+Working with files is a two-step process. We first need to 'open' the file. Then, we can 'read' it line by line. 
+There is some special syntax for opening files in Python. Behind the scenes, this special sytnax makes sure that the file is
+closed again when we are done with it, and that the working memory it occupies becomes freed up for use again. This is the 
+general recipe for reading a file:
+
+~~~
+with open('my_file') as f:
+    for line in f:
+        print(line)
+~~~
+{: .language-python}
+
+Try it out! `my_file` is the *path* to the file you want to open. 
+
+> ## Open a fastq file
+> Fill in the blanks below to open and print the contents of your sample.fastq file
+> ~~~
+> with open('__________/sample.fastq') as f:
+>     for line in _:
+>         print(____)
+> ~~~
+{: .challenge}
+
+There is nothing special about `f` or `line`, we can use any legal variable names here. This should also work:
+
+~~~
+with open('afds/py_scripts/data/sample.fastq') as fluffy:
+    for unicorn in fluffy:
+        print(unicorn)
+~~~
+{: .language-python}
+
+
 We now have almost everything we need to process all our data files.
 The only thing that's missing is a library with a rather unpleasant name:
 
