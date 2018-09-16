@@ -67,6 +67,18 @@ with open('afds/py_scripts/data/sample.fastq') as fluffy:
 ~~~
 {: .language-python}
 
+So, we can read and print the contents of a file. What else can we do? Try this:
+
+~~~
+with open('afds/py_scripts/data/sample.fastq') as f:
+    for line in f:
+        print(type(line))
+~~~
+{: .language-python}
+
+So, lines are read in as strings, which means we can perform any string operations on them.
+
+
 
 We now have almost everything we need to process all our data files.
 The only thing that's missing is a library with a rather unpleasant name:
