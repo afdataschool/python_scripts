@@ -66,7 +66,7 @@ start_time: 570
 
 # Specify that things in the episodes collection should be output.
 collections:
-  episodes:
+  episodes: true
     output: true
     permalink: /:path/index.html
   extras:
