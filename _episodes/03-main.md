@@ -28,6 +28,16 @@ or run it in a shell script to process thousands of data files.
 > fastqc -h
 > ~~~
 > {: .language-bash}
+>
+> ~~~
+> SYNOPSIS
+>
+>	fastqc seqfile1 seqfile2 .. seqfileN
+>
+>    fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam] 
+>           [-c contaminant file] seqfile1 .. seqfileN
+> ~~~
+> {: .output}
 {: .callout}
 
 
