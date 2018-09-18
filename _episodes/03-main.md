@@ -48,6 +48,18 @@ or run it in a shell script to process thousands of data files.
 > {: .language-bash}
 >
 > And you can wrap it all up inside a bash or batch script:
+> 
+> ~~~
+> #SBATCH --job-name=fastqc
+> #SBATCH --time=00:10:00
+> #SBATCH --ntasks=1
+> #SBATCH --mem=1GB
+> 
+> module add fastqc
+>
+> fastqc my_input_file.fastq.gz
+> ~~~
+> {: .language-bash}
 {: .callout}
 
 
