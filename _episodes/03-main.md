@@ -98,21 +98,21 @@ version is 3.4.3+ (default, Jul 28 2015, 13:17:50)
 
 Congratulations! You have written and called your first command line program.
 
-#Create another file called `argv_list.py` and save the following text to it.
-#
-#~~~
-#import sys
-#print('sys.argv is', sys.argv)
-#~~~
-#{: .language-python}
-#
-#> ## sys.argv type
-#> What is the type of `sys.argv`? Take a guess.
-#> Now, modify your `argv_list.py` script to print out the type of `sys.argv`
-#> Re-run your script.
-#> Does the result make sense?
-#{: .challenge}
-#
+Create another file called `argv_list.py` and save the following text to it.
+
+~~~
+import sys
+print('sys.argv is', sys.argv)
+~~~
+{: .language-python}
+
+> ## `sys.argv` type
+> What is the type of `sys.argv`? Take a guess.
+> Now, modify your `argv_list.py` script to print out the type of `sys.argv`
+> Re-run your script.
+> Does the result make sense?
+{: .challenge}
+
 #The strange name `argv` stands for "argument values".
 #Whenever Python runs a program,
 #it takes all of the values given on the command line
