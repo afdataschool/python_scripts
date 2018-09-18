@@ -30,6 +30,8 @@ or run it in a shell script to process thousands of data files.
 > ~~~
 > {: .language-bash}
 >
+{: .callout}
+
 > ~~~
 > 
 >            FastQC - A high throughput sequence QC analysis tool
