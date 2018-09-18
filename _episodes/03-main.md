@@ -60,37 +60,15 @@ or run it in a shell script to process thousands of data files.
 > fastqc my_input_file.fastq.gz
 > ~~~
 > {: .language-bash}
+>
+> We can write python programs that work just like fastqc!
 {: .callout}
 
 
-#> You can use optional arguments and flags:
-#>
-#> ~~~
-#> fastqc -o my_project/analysis/ --kmers 10 my_input_file.fastq.gz
-#> ~~~
-#> {: .language-bash}
-#> 
-#> And you can wrap it all up inside a bash or batch script:
-#>
-#> ~~~
-#> #SBATCH --job-name=fastqc
-#> #SBATCH --time=00:10:00
-#> #SBATCH --ntasks=1
-#> #SBATCH --mem=1GB
-#> 
-#> module add fastqc
-#>
-#> fastqc my_input_file.fastq.gz
-#> ~~~
-#> {: .language-bash}
-#> 
-#> We can write python programs that work just like fastqc!
-#{: .callout}
-#
-#In order to do that,
-#we need to make our programs work like other Unix command-line tools.
-#
-### Command-Line Arguments
+In order to do that,
+we need to make our programs work like other Unix command-line tools.
+
+## Command-Line Arguments
 #
 #Using the text editor of your choice,
 #save the following in a text file called `sys_version.py`:
