@@ -39,20 +39,18 @@ or run it in a shell script to process thousands of data files.
 >        [-c contaminant file] seqfile1 .. seqfileN
 > ~~~
 > {: .output}
+>
+> You can use optional arguments and flags:
+>
+> ~~~
+> fastqc -o my_project/analysis/ --kmers 10 my_input_file.fastq.gz
+> ~~~
+> {: .language-bash}
+>
+> And you can wrap it all up inside a bash or batch script:
 {: .callout}
 
 
-
-
-
-#> 
-#> You can run it with default values on a single input file:
-#> 
-#> ~~~
-#> fastqc my_input_file.fastq.gz
-#> ~~~
-#> {: .language-bash}
-#>
 #> You can use optional arguments and flags:
 #>
 #> ~~~
