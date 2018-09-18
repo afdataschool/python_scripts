@@ -30,12 +30,13 @@ or run it in a shell script to process thousands of data files.
 > {: .language-bash}
 >
 > ~~~
+>           FastQC - A high throughput sequence QC analysis tool
 > SYNOPSIS
 >
->	fastqc seqfile1 seqfile2 .. seqfileN
+> fastqc seqfile1 seqfile2 .. seqfileN
 >
->    fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam] 
->           [-c contaminant file] seqfile1 .. seqfileN
+> fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam] 
+>        [-c contaminant file] seqfile1 .. seqfileN
 > ~~~
 > {: .output}
 {: .callout}
@@ -43,18 +44,7 @@ or run it in a shell script to process thousands of data files.
 
 
 
-#> ~~~
-#> 
-#>            FastQC - A high throughput sequence QC analysis tool
-#>
-#> SYNOPSIS
-#>
-#>	fastqc seqfile1 seqfile2 .. seqfileN
-#>
-#>    fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam] 
-#>           [-c contaminant file] seqfile1 .. seqfileN
-#> ~~~
-#> {: .output}
+
 #> 
 #> You can run it with default values on a single input file:
 #> 
