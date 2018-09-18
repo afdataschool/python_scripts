@@ -28,7 +28,7 @@ or run it in a shell script to process thousands of data files.
 > ~~~
 > fastqc -h
 > ~~~
-> {: .source}
+> {: .language-bash}
 >
 > ~~~
 > 
@@ -48,14 +48,14 @@ or run it in a shell script to process thousands of data files.
 > ~~~
 > fastqc my_input_file.fastq.gz
 > ~~~
-> {: .source}
+> {: .language-bash}
 >
 > You can use optional arguments and flags:
 >
 > ~~~
 > fastqc -o my_project/analysis/ --kmers 10 my_input_file.fastq.gz
 > ~~~
-> {: .source}
+> {: .language-bash}
 > 
 > And you can wrap it all up inside a bash or batch script:
 >
@@ -69,7 +69,7 @@ or run it in a shell script to process thousands of data files.
 >
 > fastqc my_input_file.fastq.gz
 > ~~~
-> {: .source}
+> {: .language-bash}
 > 
 > We can write python programs that work just like fastqc!
 {: .callout}
