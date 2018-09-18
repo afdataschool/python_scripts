@@ -69,35 +69,35 @@ In order to do that,
 we need to make our programs work like other Unix command-line tools.
 
 ## Command-Line Arguments
-#
-#Using the text editor of your choice,
-#save the following in a text file called `sys_version.py`:
-#
-#~~~
-#import sys
-#print('version is', sys.version)
-#~~~
-#{: .language-python}
-#
-#The first line imports a library called `sys`,
-#which is short for "system".
-#It defines values such as `sys.version`,
-#which describes which version of Python we are running.
-#We can run this script from the command line like this:
-#
-#~~~
-#$ python sys_version.py
-#~~~
-#{: .language-bash}
-#
-#~~~
-#version is 3.4.3+ (default, Jul 28 2015, 13:17:50)
-#[GCC 4.9.3]
-#~~~
-#{: .output}
-#
-#Congratulations! You have written and called your first command line program.
-#
+
+Using the text editor of your choice,
+save the following in a text file called `sys_version.py`:
+
+~~~
+import sys
+print('version is', sys.version)
+~~~
+{: .language-python}
+
+The first line imports a library called `sys`,
+which is short for "system".
+It defines values such as `sys.version`,
+which describes which version of Python we are running.
+We can run this script from the command line like this:
+
+~~~
+$ python sys_version.py
+~~~
+{: .language-bash}
+
+~~~
+version is 3.4.3+ (default, Jul 28 2015, 13:17:50)
+[GCC 4.9.3]
+~~~
+{: .output}
+
+Congratulations! You have written and called your first command line program.
+
 #Create another file called `argv_list.py` and save the following text to it.
 #
 #~~~
