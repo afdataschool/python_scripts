@@ -108,42 +108,43 @@ print('sys.argv is', sys.argv)
 
 > ## `sys.argv` type
 > What is the type of `sys.argv`? Take a guess.
-> Now, modify your `argv_list.py` script to print out the type of `sys.argv`
-> Re-run your script.
-> Does the result make sense?
+>
+> Now, modify your `argv_list.py` script to print out the type of `sys.argv`.
+>
+> Re-run your script. Does the result make sense?
 {: .challenge}
 
-#The strange name `argv` stands for "argument values".
-#Whenever Python runs a program,
-#it takes all of the values given on the command line
-#and puts them in the list `sys.argv`
-#so that the program can determine what they were.
-#If we run this program with no arguments:
-#
-#~~~
-#$ python argv_list.py
-#~~~
-#{: .language-bash}
-#
-#~~~
-#sys.argv is ['argv_list.py']
-#~~~
-#{: .output}
-#
-#the only thing in the list is the full path to our script,
-#which is always `sys.argv[0]`.
-#If we run it with a few arguments, however:
-#
-#~~~
-#$ python argv_list.py first second third
-#~~~
-#{: .language-bash}
-#
-#~~~
-#sys.argv is ['argv_list.py', 'first', 'second', 'third']
-#~~~
-#{: .output}
-#
+The strange name `argv` stands for "argument values".
+Whenever Python runs a program,
+it takes all of the values given on the command line
+and puts them in the list `sys.argv`
+so that the program can determine what they were.
+If we run this program with no arguments:
+
+~~~
+$ python argv_list.py
+~~~
+{: .language-bash}
+
+~~~
+sys.argv is ['argv_list.py']
+~~~
+{: .output}
+
+the only thing in the list is the full path to our script,
+which is always `sys.argv[0]`.
+If we run it with a few arguments, however:
+
+~~~
+$ python argv_list.py first second third
+~~~
+{: .language-bash}
+
+~~~
+sys.argv is ['argv_list.py', 'first', 'second', 'third']
+~~~
+{: .output}
+
 #then Python adds each of those arguments to that magic list.
 #
 #FIXME - have already developed functions in module 1 to process files in Jupyter. (number of reads? Averages?)
