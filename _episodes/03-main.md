@@ -145,15 +145,28 @@ sys.argv is ['argv_list.py', 'first', 'second', 'third']
 ~~~
 {: .output}
 
-#then Python adds each of those arguments to that magic list.
-#
-#FIXME - have already developed functions in module 1 to process files in Jupyter. (number of reads? Averages?)
-#FIXME - need to cover classes to understand __name__
-#
-#> ## Running Versus Importing
-#>
-#> Running a Python script in bash is very similar to
-#> importing that file in Python.
+then Python adds each of those arguments to that magic list.
+
+> ## calculate the mean
+> 1. Write a python script that takes two command line integers
+> and calculates their mean:
+> ~~~
+> $ calc_mean.py 3 23
+> ~~~
+> {: .language-python}
+> 
+> ~~~
+> 13.0
+> ~~~
+> {: .output}
+>
+> 2. Modify your program to calculate the mean of any number of command line arguments.
+{: .challenge}
+
+> ## Running Versus Importing
+>
+> Running a Python script in bash is very similar to
+> importing that file in Python.
 #> The biggest difference is that we don't expect anything
 #> to happen when we import a file,
 #> whereas when running a script, we expect to see some
