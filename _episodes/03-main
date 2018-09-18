@@ -29,7 +29,6 @@ or run it in a shell script to process thousands of data files.
 > fastqc -h
 > ~~~
 > {: .language-bash}
->
 {: .callout}
 
 > ~~~
