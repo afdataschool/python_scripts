@@ -24,12 +24,14 @@ or run it in a shell script to process thousands of data files.
 >
 > Everyone now has experience running the command-line program FastQC. You can ask for help:
 > 
->
 > ~~~
 > fastqc -h
 > ~~~
 > {: .language-bash}
 {: .callout}
+
+
+
 
 #> ~~~
 #> 
