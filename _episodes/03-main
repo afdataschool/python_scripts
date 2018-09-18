@@ -34,7 +34,7 @@ or run it in a shell script to process thousands of data files.
 > 
 >            FastQC - A high throughput sequence QC analysis tool
 >
->SYNOPSIS
+> SYNOPSIS
 >
 >	fastqc seqfile1 seqfile2 .. seqfileN
 >
@@ -76,18 +76,6 @@ or run it in a shell script to process thousands of data files.
 
 In order to do that,
 we need to make our programs work like other Unix command-line tools.
-For example,
-we may want a program that reads a dataset
-and prints the average inflammation per patient.
-
-> ## Switching to Shell Commands
->
-> In this lesson we are switching from typing commands in a Python interpreter to typing
-> commands in a shell terminal window (such as bash). When you see a `$` in front of a
-> command that tells you to run that command in the shell rather than the Python interpreter.
-{: .callout}
-
-#FIX ME - example script that calculates averages.
 
 ## Command-Line Arguments
 
@@ -167,8 +155,8 @@ sys.argv is ['argv_list.py', 'first', 'second', 'third']
 
 then Python adds each of those arguments to that magic list.
 
-#FIXME - have already developed functions in module 1 to process files in Jupyter. (number of reads? Averages?)
-#FIXME - need to cover classes to understand __name__
+FIXME - have already developed functions in module 1 to process files in Jupyter. (number of reads? Averages?)
+FIXME - need to cover classes to understand __name__
 
 > ## Running Versus Importing
 >
