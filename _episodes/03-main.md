@@ -20,6 +20,100 @@ The Jupyter Notebook and other interactive tools are great for prototyping code 
 but sooner or later we will want to use our program in a pipeline
 or run it in a shell script to process thousands of data files.
 
+
+## Running Versus Importing
+
+Running a Python script in bash is very similar to
+importing that file in Python.
+The biggest difference is that we don't want anything
+to happen when we import a file, until we intentionally call the functions it contains,
+whereas when running a script, we expect to see some
+output printed to the console. 
+ 
+In fact, you can use the same file for importing or for running as a script. Let's try this out.
+
+> ## Line-check function
+> At this point, you should have a function in a Jupyter notebook that takes two input files and checks that they have
+> the same number of lines. 
+> This could be a very useful function, that you might want to use again!
+> To 'save' this function for re-use, copy and paste it into a text editor of your choice. 
+> save the file with a meaningful name of your choice, making sure to use the .py extension.
+>
+> Now, start a new Jupyter notebook. 
+> 
+> 1. try importing your file as a module. For instance, if you file is called `parsing.py`, type `import parsing`.
+> 2. Call your function in a new cell of your notebook, specifying the files you want to run it on. 
+{: .challenge}
+
+Voila! You can now save functions you write for later reuse. This development approach, Jupyter notebook -> module file, can be quite useful.
+
+What if instead of importing your function, you want to run it as a stand-alone script? Try this:
+
+~~~
+python parsing.py
+~~~
+{: .language-bash}
+
+What happened?
+
+The problem is, that we have not called our function *within* the script. Edit your script now to include a function call after the function definition. Rerun your script.
+
+Now, open a new Jupyter notebook again, and import your file again. Is this what we want to happen?
+
+In order for a Python script to work as expected
+when imported or when run as a script,
+we typically put the part of the script
+that produces output (i.e., calls the functions in the right order), inside a 'main' function:
+
+~~~
+def my_avg(x, y):
+    return (x+y)/2
+
+def main():
+    my_avg(3,7)
+~~~
+{: .language-python}
+
+This will stop your specific call to `my_avg()` from running when you import the module, but there is now no 
+function call to `main()`, so we won't get output when we run it as a script either. This looks a bit like we are 
+going around in circles...
+
+However, there is a nifty trick in Python! Everything in Python is what we call an 'object', and objects have some special features defined behind the scenes. These features are normally hidden from view, but we can access them if we want to. One special feature is `__name__`
+
+Let's see how this works:
+
+> ## The value of `__name__`
+> In your Jupyter notebook, with your module loaded, 
+> type `print(parser.__name__)`
+>
+> Now, modify your script to include the following line at the bottom:
+>
+> ~~~
+> print(__name__)
+> ~~~
+> {: .language-python}
+{: .challenge-python}
+
+The value of `__name__` gets 'filled in' when we import or call the code, and it is different when we import the code
+as a module, or call it as a script from the command line.
+
+We can control the behaviour of our script using this property of `__name__`.
+
+After your `main()` function definition, include an `if` statement that only calls `main` if the file is run as 
+a script:
+
+~~~
+def my_avg(x, y):
+    return (x+y)/2
+
+def main():
+    my_avg(3,7)
+
+if __name__ == '__main__':
+    main()
+~~~
+{: .language-python}
+
 > ## FastQC analogy
 >
 > Everyone now has experience running the command-line program FastQC. You can ask for help:
@@ -166,98 +260,6 @@ then Python adds each of those arguments to that magic list.
 > 
 {: .challenge}
 
-## Running Versus Importing
-
-Running a Python script in bash is very similar to
-importing that file in Python.
-The biggest difference is that we don't want anything
-to happen when we import a file, until we intentionally call the functions it contains,
-whereas when running a script, we expect to see some
-output printed to the console. 
- 
-In fact, you can use the same file for importing or for running as a script. Let's try this out.
-
-> ## Line-check function
-> At this point, you should have a function in a Jupyter notebook that takes two input files and checks that they have
-> the same number of lines. 
-> This could be a very useful function, that you might want to use again!
-> To 'save' this function for re-use, copy and paste it into a text editor of your choice. 
-> save the file with a meaningful name of your choice, making sure to use the .py extension.
->
-> Now, start a new Jupyter notebook. 
-> 
-> 1. try importing your file as a module. For instance, if you file is called `parsing.py`, type `import parsing`.
-> 2. Call your function in a new cell of your notebook, specifying the files you want to run it on. 
-{: .challenge}
-
-Voila! You can now save functions you write for later reuse. This development approach, Jupyter notebook -> module file, can be quite useful.
-
-What if instead of importing your function, you want to run it as a stand-alone script? Try this:
-
-~~~
-python parsing.py
-~~~
-{: .language-bash}
-
-What happened?
-
-The problem is, that we have not called our function *within* the script. Edit your script now to include a function call after the function definition. Rerun your script.
-
-Now, open a new Jupyter notebook again, and import your file again. Is this what we want to happen?
-
-In order for a Python script to work as expected
-when imported or when run as a script,
-we typically put the part of the script
-that produces output (i.e., calls the functions in the right order), inside a 'main' function:
-
-~~~
-def my_avg(x, y):
-    return (x+y)/2
-
-def main():
-    my_avg(3,7)
-~~~
-{: .language-python}
-
-This will stop your specific call to `my_avg()` from running when you import the module, but there is now no 
-function call to `main()`, so we won't get output when we run it as a script either. This looks a bit like we are 
-going around in circles...
-
-However, there is a nifty trick in Python! Everything in Python is what we call an 'object', and objects have some special features defined behind the scenes. These features are normally hidden from view, but we can access them if we want to. One special feature is `__name__`
-
-Let's see how this works:
-
-> ## The value of `__name__`
-> In your Jupyter notebook, with your module loaded, 
-> type `print(parser.__name__)`
->
-> Now, modify your script to include the following line at the bottom:
->
-> ~~~
-> print(__name__)
-> ~~~
-> {: .language-python}
-{: .challenge-python}
-
-The value of `__name__` gets 'filled in' when we import or call the code, and it is different when we import the code
-as a module, or call it as a script from the command line.
-
-We can control the behaviour of our script using this property of `__name__`.
-
-After your `main()` function definition, include an `if` statement that only calls `main` if the file is run as 
-a script:
-
-~~~
-def my_avg(x, y):
-    return (x+y)/2
-
-def main():
-    my_avg(3,7)
-
-if __name__ == '__main__':
-    main()
-~~~
-{: .language-python}
 #To actually make the logic 'run', we need to call our main function (just like every other function).
 #We could add a function call to main at the bottom of our script:
 #
