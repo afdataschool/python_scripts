@@ -175,7 +175,31 @@ to happen when we import a file, until we intentionally call the functions it co
 whereas when running a script, we expect to see some
 output printed to the console. 
  
-In fact, you can use the same file for importing or for running as a script.
+In fact, you can use the same file for importing or for running as a script. Let's try this out.
+
+> ## Line-check function
+> At this point, you should have a function in a Jupyter notebook that takes two input files and checks that they have
+> the same number of lines. 
+> This could be a very useful function, that you might want to use again!
+> To 'save' this function for re-use, copy and paste it into a text editor of your choice. 
+> save the file with a meaningful name of your choice, making sure to use the .py extension.
+>
+> Now, start a new Jupyter notebook. 
+> 
+> 1. try importing your file as a module. For instance, if you file is called `parsing.py`, type `import parsing`.
+> 2. Call your function in a new cell of your notebook, specifying the files you want to run it on. 
+{: .challenge}
+
+Voila! You can now save functions you write for later reuse. This development approach, Jupyter notebook -> module file, can be quite useful.
+
+What if instead of importing your function, you want to run it as a stand-alone script? Try this:
+
+~~~
+python parsing.py
+~~~
+{: .language-bash}
+
+What happened?
 
 #> In order for a Python script to work as expected
 #> when imported or when run as a script,
