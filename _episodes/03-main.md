@@ -83,6 +83,7 @@ However, there is a nifty trick in Python! Everything in Python is what we call 
 Let's see how this works:
 
 > ## The value of `__name__`
+>
 > In your Jupyter notebook, with your module loaded, 
 > type `print(parser.__name__)`
 >
@@ -113,6 +114,8 @@ if __name__ == '__main__':
     main()
 ~~~
 {: .language-python}
+
+Wonderful! However, we don't really want to hard code our specific  data into our program. It would be better if we could specify our data at the command line.
 
 > ## FastQC analogy
 >
@@ -157,7 +160,6 @@ if __name__ == '__main__':
 >
 > We can write python programs that work just like fastqc!
 {: .callout}
-
 
 In order to do that,
 we need to make our programs work like other Unix command-line tools.
@@ -260,45 +262,7 @@ then Python adds each of those arguments to that magic list.
 > 
 {: .challenge}
 
-#To actually make the logic 'run', we need to call our main function (just like every other function).
-#We could add a function call to main at the bottom of our script:
-#
-#~~~
-#FIXME
-#main()
-#~~~
-#{: .language-python}
-#
-#This should work. Great! However, calling the main function inside the script like this will cause the 
-#logic to execute when we import the file as a module, too. 
-#
-#> ## Try it out
-#> In your python notebook, in a new cell type:
-#> ~~~
-#> import myscript
-#> ~~~
-#> {: .lanugage-python}
-#{: .challenge}
-#
-#We can get around this problem by placing the call to `main()` inside the following `if` statement:
-#
-#~~~
-#if __name__ == '__main__':
-#    main()  
-#~~~
-#{: .language-python}
-#
-#When you import a Python file, `__name__` is the name
-#of that file (e.g., when importing `readings.py`,
-#`__name__` is `'readings'`). However, when running a
-#script in bash, `__name__` is always set to `'__main__'`
-#in that script so that you can determine if the file
-#is being imported or run as a script.
-#{: .callout}
-#
-#> ## The value of `__name__`
-#>
-#> ## The Right Way to Do It
+> ## The Right Way to Do It
 #>
 #> If our programs can take complex parameters or multiple filenames,
 #> we shouldn't handle `sys.argv` directly.
