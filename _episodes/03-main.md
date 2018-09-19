@@ -201,6 +201,10 @@ python parsing.py
 
 What happened?
 
+The problem is, that we have not called our function *within* the script. Edit your script now to include a function call after the function definition. Rerun your script.
+
+
+
 #> In order for a Python script to work as expected
 #> when imported or when run as a script,
 #> we typically put the part of the script
